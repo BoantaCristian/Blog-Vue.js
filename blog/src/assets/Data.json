@@ -1,0 +1,43 @@
+[
+    { 
+        "name": "My very first blog", 
+        "author": "Boanta Cristian", 
+        "pubdate": {"year":"2015",
+                    "month":"7",
+                    "day":"6"}, 
+        "content": "After some days of struggleing I've started to be a blogger. Stay tuned I'll post periodically the most interesting blogs you have ever seen.",
+        "likes": 0,
+        "dislikes": 0
+    },
+    { 
+        "name": "Home sweet home", 
+        "author": "Ion Ion Ion-Praz", 
+        "pubdate": {"year":"2016",
+                    "month":"9",
+                    "day":"15"},  
+        "content": "Craiova este municipiul de reședință al județului Dolj, Oltenia, România, format din localitățile componente Craiova (reședința), Făcăi, Mofleni, Popoveni și Șimnicu de Jos, și din satele Cernele, Cernelele de Sus, Izvorul Rece și Rovine. Localizare: Municipiul Craiova este situat în sudul României, pe malul stâng al Jiului, la ieșirea acestuia din regiunea deluroasă, la o altitudine cuprinsă între 75 și 116 m. Climă: Regimul climatic este temperat continental specific de câmpie. Relief: Relieful orașului Craiova se identifică cu relieful județului Dolj, respectiv de câmpie. Populatie: 269.506 locuitori",
+        "likes": 0,
+        "dislikes": 0 
+    },
+    { 
+        "name": "Program or be Programmed", 
+        "author": "Gs Wser", 
+        "pubdate": {"year":"2017",
+            "month":"3",
+            "day":"6"},  
+            "content": "A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with contentA long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with contentA long string with content, A long string with ",
+            "likes": 0,
+            "dislikes": 0 
+        },
+        
+        { 
+            "name": "Altered Carbon", 
+            "author": "Laeta Kalogridis", 
+            "pubdate": {"year":"2017",
+                        "month":"8",
+                        "day":"12"}, 
+            "content": "Set in a future where consciousness is digitized and stored, a prisoner returns to life in a new body and must solve a mind-bending murder to win his freedom. I can't help stop thinking about nect season 2019",
+            "likes": 0,
+            "dislikes": 0
+        }
+]

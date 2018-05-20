@@ -1,0 +1,21 @@
+{"data" : [
+{ 
+  "name": "The Book of Trees", 
+  "author": "ion ion ion", 
+  "pubdate": "new Date('2014', '03', '08')", 
+  "cover": "img/the-book-of-trees.jpg",
+  "content": "A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content",
+  "likes": 0,
+  "dislikes": 0
+},
+{ 
+    "name": "Program or be Programmed", 
+    "author": "gs wser", 
+    "pubdate": "new Date()", 
+    "cover": "'img/program-or-be-programmed.jpg'",
+    "content": "A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content, A long string with content",
+    "likes": 0,
+    "dislikes": 0 
+    }  
+ 
+  ]}
