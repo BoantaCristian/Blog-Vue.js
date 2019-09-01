@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="bg">
-      <NavBar />
+      <NavBar/>
       
-       <router-view></router-view>
+       <router-view ></router-view>
   </div>
 </template>
 
@@ -28,6 +28,9 @@ export default {
     Contact,
     About
   },
+  methods: {
+    
+  }
 }
 </script>
 

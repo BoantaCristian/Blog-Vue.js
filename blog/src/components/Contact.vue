@@ -18,18 +18,30 @@
     </div>
 </template>
 <script>
+
+    import {bus} from '../main'
+
     export default {
         name: 'about',
     
     data() {
         return {
-            
+            logat: false,
            
         }
     },
     methods: {
         
         
+    },
+    created(){
+        bus.$on('Nav', (data) => {
+            this.logat = data
+        })
+    },
+
+    destroyed(){
+        bus.$emit('Nav', this.logat)
     }
 }
 </script>
@@ -72,8 +84,5 @@ h3 {
         width: 800px;
         padding: 10px;
         height: 45%;
-    }
-.gradient {
-        background: linear-gradient(to right, white, #BFBFBF);
     }
 </style>

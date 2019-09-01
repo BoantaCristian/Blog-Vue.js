@@ -1,12 +1,11 @@
 <template>
     <div class="home">
-        
         <carousel class="col">
             <slide>
                 <img src="../assets/blog.jpg" class="img">
                 <div class="position">
                     Aren't you curious to see my 
-                    <router-link to="/blog" exact class="click"> Blogs</router-link>
+                    <router-link to="/blog"  exact class="click nav-buttons"> Blogs</router-link>
                     ? Rate me up!
                 </div>
             </slide>
@@ -14,26 +13,26 @@
                 <img src="../assets/blog2.jpg" class="img">
                 <div class="position">
                     Questions? Don't wait,
-                    <router-link to="/contact" exact class="click"> Ask me</router-link>
+                    <router-link to="/contact" exact class="click nav-buttons"> Ask me</router-link>
                 </div>
             </slide>
             <slide>
                 <img src="../assets/blog3.jpg" class="img">
                 <div class="position">
                     Learn more about 
-                    <router-link to="/about" exact class="click"> Me </router-link>
+                    <router-link to="/about" exact class="click nav-buttons"> Me </router-link>
                 </div>
             </slide>
         </carousel>
-        <div class="flex-container gradient">
-            <div class=" gradient">
-                <h4> What are blogs </h4> 
+        <div class="flex-container gradient-home">
+            <div class=" gradient-home">
+                <h4> What are blogs</h4> 
                 <p class="text"> A blog is a web publication that contains regular and up-to-date news items that are typically personal. As a rule, updating blogs is a collection of new text-like diaries, all of which are displayed in reverse chronological order (the newest appear immediately, at the top).
                                 The term "blog" appeared in 1997, when John Berger called his own weblog site.<br><br> If blogs were first updated manually, "tools" (programs and methods) appeared to automate this process. Using such software based on Internet browsers is now a common aspect of blogging.</p></div>
                 <div><img src="../assets/blog4.jpg" class="pg"></div>
         </div>
-        <div class="flex-container gradient">
-            <div class=" gradient">
+        <div class="flex-container gradient-home">
+            <div class=" gradient-home">
                 <h4> Practice </h4> 
                 <p class="text"> Nobody is perfect! If you fall you need to stand up, the circumstances do not matter. </p>
                 <h4> Improve youself </h4> 
@@ -42,9 +41,9 @@
             <div><img src="../assets/practice.jpg" class="pg"></div>
             <div><img src="../assets/blog6.jpg" class="pg"></div>
         </div>
-        <div class="flex-container gradient">
+        <div class="flex-container gradient-home">
             <div><img src="../assets/blog5.jpg" class="pg"></div>
-            <div class=" gradient">
+            <div class=" gradient-home">
                 <h4> Explore everything </h4> 
                 <p class="text">Exploration is the act of searching for the purpose of discovery of information or resources. <br><br>
                 Knowledge is power. Information is liberating. Education is the premise of progress, in every society, in every family.<br><br>
@@ -58,6 +57,7 @@
 
 <script>
 import {Carousel, Slide} from 'vue-carousel'
+import {bus} from '../main'
     export default {
         name: 'home',
         components: {
@@ -67,6 +67,7 @@ import {Carousel, Slide} from 'vue-carousel'
     
     data() {
         return {
+            logat: false,
            slideIndex:0,
            items: [
                {
@@ -87,12 +88,14 @@ import {Carousel, Slide} from 'vue-carousel'
            ]
         }
     },
-     mounted() {
-        
+    created(){
+        bus.$on('Nav', (data) => {
+            this.logat = data
+        })
     },
-    methods: {
 
-    
+    destroyed(){
+        bus.$emit('Nav', this.logat)
     }
 }
 </script>
@@ -126,9 +129,10 @@ import {Carousel, Slide} from 'vue-carousel'
 
     .flex-container {
         position: relative;
-        margin: 0 auto;
+        margin: 10px auto;
         display: flex;
         width: 65%;
+        border-radius: 20px !important;
 }
 .flex-container  div {
   margin: 10px;
@@ -136,7 +140,7 @@ import {Carousel, Slide} from 'vue-carousel'
   padding: 0px;
   font-size: 18px;
 }
-.gradient {
+.gradient-home {
         background: linear-gradient(to right, white, #BFBFBF);
     }
 

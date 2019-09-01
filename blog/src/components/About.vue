@@ -3,7 +3,7 @@
         <div class="header">
             <h1>About me</h1>
         </div>
-        <div class="column1 gradient">
+        <div class="column1 gradient-about">
             
                 <p class="paragraph"><b>Introduction</b></p>
                 <div class="continut">
@@ -12,7 +12,7 @@
                         and this is my first vue.js app done from scratch.<br><br>
                         After I came in contact with web development I have noticed that this is an interesting, challenging and satisfying IT domain and I want to improve
                         my skills in this direction to develop more complex apps.<br><br>
-                        I implemented things that may not be needed, but I have done them to learn and and practice more features of a web app using vueJS.
+                        I implemented things that may not be needed, but I have done them to learn and practice more features of a web app using vueJS.
                     </b> <br><br><br><br>
                 </div>
                 <p class="paragraph"><b>Challenges</b></p>
@@ -33,26 +33,35 @@
 </template>
 
 <script>
+
+    import {bus} from '../main'
+    
     export default {
         name: 'about',
     
     data() {
         return {
             userData: [],
+            logat: false,
            
         }
     },
-     mounted() {
-
-        
-            
+     mounted() {            
           this.$http.get('https://gist.githubusercontent.com/BoantaCristian/09a9cb1a2f1fdb2a25c4fc29159032b0/raw/a1cabbf0810d81d2247862642e52431991ef7461/gistfile1.txt').then(function(data){
                 this.userData = data.body
             });
-        
     },
     methods: {
         
+    },
+    created(){
+        bus.$on('Nav', (data) => {
+            this.logat = data
+        })
+    },
+
+    destroyed(){
+        bus.$emit('Nav', this.logat)
     }
 }
 </script>
@@ -99,8 +108,9 @@ h1 {
         height: 45%;
         border-top: solid;
         border-color: grey;
+        border-radius: 40px;
     }
-.gradient {
+.gradient-about {
         background: linear-gradient(to right, white, #BFBFBF);
     }
 </style>
