@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cdn": "^1.1.1",
     "sendgrid": "^5.2.3",
     "sql-dialect": "^4.0.10",
